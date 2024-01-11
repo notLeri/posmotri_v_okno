@@ -42,7 +42,7 @@ ol {
 .content {
   margin: 133px 30px;
   max-width: 1140px;
-  display: flex;
+  display: flex;  
   flex-direction: row;
   gap: 30px;
 }
@@ -57,7 +57,8 @@ ol {
 .result__video-container {
   position: relative;
   width: 711px;
-  height: 386px;
+  height: fit-content;
+  overflow: hidden;
 }
 
 .result__video {
@@ -69,10 +70,13 @@ ol {
 }
 
 .search-form {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 40px;
+  width: auto; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 194px;
 }
 
 .search-form__fieldset {
@@ -80,6 +84,7 @@ ol {
   flex-direction: column;
   gap: 5px;
   border: none;
+  width: auto;
 }
 
 .search-form__fieldset-title {
@@ -87,8 +92,23 @@ ol {
   font-weight: 400;
 }
 
+.search-form__textfield {
+  appearance: none;
+  color: inherit;
+  background-color: transparent;
+}
+
+.search-form__checkbox-list {
+  /* display: inline-block; */
+}
+
 .search-form__checkbox {
   cursor: pointer;
+}
+
+.search-form__pseudo-checkbox {
+  justify-content: center;
+  align-content: center;
 }
 
 .search-form__label {
@@ -107,13 +127,13 @@ ol {
   text-align: center;
   font: inherit;
   cursor: pointer;
+  font-weight: 700;
+  height: 34px;
+  align-self: flex-end;
 }
 
 .search-form__submit-button {
-  align-self: flex-end;
-  width: 194px;
-  height: 34px;
-  font-weight: 700;
+  /* width: 194px; */
 }
 
 .content__details {
@@ -142,7 +162,8 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .content__card-link {
@@ -183,7 +204,11 @@ ol {
   height: 103px;
 }
 
-.visually-hidden { 
+.more-button {
+  width: 100%;
+}
+
+.visually-hidden {
   position: absolute;
   inline-size: 1px;
   block-size: 1px;
@@ -191,4 +216,38 @@ ol {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* .search-form__textfield:focus-visible, */
+button:focus,
+.content__video-card:focus {
+  outline-color: white;
+  outline-style: solid;
+  outline-width: 1px;
+}
+
+.search-form__label:only-of-type:has(:focus-visible) {
+  outline-color: white;
+  outline-style: solid;
+  outline-width: 1px;
+}
+
+button:hover,
+.content__video-card:hover {
+  text-decoration: underline;
+}
+
+button:active,
+.content__video-card:active {
+  background: #545050;
+}
+
+
+
+*::-webkit-scrollbar {
+  /* width: 0px; */
 }
