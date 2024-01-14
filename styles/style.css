@@ -137,14 +137,14 @@ ol {
 
 .search-form__label:active {
   .search-form__pseudo-checkbox::before {
-    content: "";  
+    content: "";
     position: relative;
     left: 0px;
     top: 1px;
     width: 15px;
     height: 15px;
     background-color: white;
-  } 
+  }
 }
 .button {
   color: white;
@@ -179,7 +179,7 @@ ol {
 
 .content__list {
   position: relative;
-  max-height: 298px; /* */
+  max-height: 298px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -187,7 +187,7 @@ ol {
 }
 
 .content__card-link {
-  display: block; 
+  display: block;
   color: white;
   text-decoration: none;
   margin: 3px;
@@ -244,11 +244,6 @@ button:focus-visible,
   outline-style: solid;
   outline-width: 1px;
   outline-offset: 1px;
-}
-
-.search-form__label:focus,
-.search-form__label-text:focus {
-  outline: black;
 }
 
 button:hover,
