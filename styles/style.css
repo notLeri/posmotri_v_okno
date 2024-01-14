@@ -43,7 +43,7 @@ ol {
   margin: 135px 30px;
   min-width: 1140px;
   min-height: 540px;
-  display: flex;  
+  display: flex;
   flex-direction: row;
   gap: 30px;
 }
@@ -59,7 +59,6 @@ ol {
   position: relative;
   width: 711px;
   max-height: 386px;
-  /* height: fit-content; */
   overflow: hidden;
 }
 
@@ -91,14 +90,9 @@ ol {
   width: fit-content;
 }
 
-/* .search-form__label:only-of-type {
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-} */
-
 .search-form__textfield {
   position: relative;
-  /* margin: 2px; */
+  margin: 1px;
   appearance: none;
   border: none;
   border-top: 1px solid #fff;
@@ -107,7 +101,6 @@ ol {
   color: inherit;
   font-family: Fira Sans Condensed;
   font-size: 18px;
-  width: fit-content;
   width: 225px;
 }
 
@@ -142,16 +135,17 @@ ol {
   align-content: center;
 }
 
-.search-form__pseudo-checkbox:active::before {
-  content: "";
-  position: relative;
-  left: 0px;
-  top: 1px;
-  width: 15px;
-  height: 15px;
-  background-color: white;
+.search-form__label:active {
+  .search-form__pseudo-checkbox::before {
+    content: "";  
+    position: relative;
+    left: 0px;
+    top: 1px;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+  } 
 }
-
 .button {
   color: white;
   border: 1px solid white;
@@ -189,13 +183,14 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: auto;
 }
 
 .content__card-link {
+  display: block; 
   color: white;
   text-decoration: none;
+  margin: 3px;
 }
 
 .content__video-card {
@@ -212,7 +207,6 @@ ol {
   gap: 6px;
   overflow: hidden;
   word-wrap: break-word;
-  flex: 1;
 }
 
 .content__video-card-title {
@@ -224,24 +218,17 @@ ol {
 
 .content__video-card-description {
   font-family: Fira Sans Condensed;
-  line-height: 16.2px;
+  line-height: 90%;
 }
 
 .content__video-card-thumbnail {
-  /* width: 194px;
-  height: 107px; */
   height: 103px;
   width: 191px;
-  
+  object-fit: cover;
 }
 
 .more-button {
   width: 100%;
-}
-
-.content__card-link {
-  display: block;
-  margin: 3px;
 }
 
 .content__video-card:focus,
@@ -252,14 +239,17 @@ input:focus {
 
 button:focus-visible,
 .search-form__label:has(:focus-visible),
-.search-form__pseudo-checkbox:focus-visible,
-.content__video-card:focus-visible
- { 
+.content__video-card:focus-visible {
   outline-color: white;
   outline-style: solid;
   outline-width: 1px;
+  outline-offset: 1px;
 }
 
+.search-form__label:focus,
+.search-form__label-text:focus {
+  outline: black;
+}
 
 button:hover,
 .content__video-card:hover,
