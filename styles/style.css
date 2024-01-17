@@ -41,6 +41,7 @@ ol {
 }
 
 .content {
+  width: 100%;
   margin: 135px 30px;
   display: flex;
   flex-direction: row;
@@ -101,7 +102,7 @@ ol {
   border-bottom: 1px solid #fff;
   background-color: transparent;
   color: inherit;
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, sans-serif;
   font-size: inherit;
   width: 225px;
 }
@@ -160,6 +161,7 @@ ol {
 }
 
 .content__details {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 22px;
